@@ -1,0 +1,341 @@
+{
+  "settings": {
+    "languages": [
+      "zh"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "zh"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "zh": {
+        "settings": {
+          "locale": "zh",
+          "trainByDomain": false,
+          "tag": "domain-manager-zh",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "dian4,ka3,nao3,qia3": {
+            "intent": "pc.restart",
+            "domain": "default"
+          },
+          "bing1,bing3,dian4,lan2,nao3,ping2": {
+            "intent": "pc.restart",
+            "domain": "default"
+          },
+          "dian4,man4,nao3": {
+            "intent": "pc.restart",
+            "domain": "default"
+          },
+          "bao4,he2,ru2,xiao1": {
+            "intent": "expense",
+            "domain": "default"
+          },
+          "bao4,che1,da3,shei2,xiao1,zhao3": {
+            "intent": "expense",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "pc.restart": "default",
+          "expense": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "电脑卡",
+            "intent": "pc.restart"
+          },
+          {
+            "domain": "default",
+            "utterance": "电脑蓝屏",
+            "intent": "pc.restart"
+          },
+          {
+            "domain": "default",
+            "utterance": "电脑慢",
+            "intent": "pc.restart"
+          },
+          {
+            "domain": "default",
+            "utterance": "如何报销？",
+            "intent": "expense"
+          },
+          {
+            "domain": "default",
+            "utterance": "打车报销找谁？",
+            "intent": "expense"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "zh",
+              "tag": "nlu-zh",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "dian4": 1,
+              "nao3": 1,
+              "ka3": 1,
+              "qia3": 1,
+              "lan2": 1,
+              "bing1": 1,
+              "bing3": 1,
+              "ping2": 1,
+              "man4": 1,
+              "ru2": 1,
+              "he2": 1,
+              "bao4": 1,
+              "xiao1": 1,
+              "da3": 1,
+              "che1": 1,
+              "zhao3": 1,
+              "shei2": 1
+            },
+            "intents": {
+              "pc.restart": 1,
+              "expense": 1
+            },
+            "intentFeatures": {
+              "pc.restart": {
+                "dian4": 1,
+                "nao3": 1,
+                "ka3": 1,
+                "qia3": 1,
+                "lan2": 1,
+                "bing1": 1,
+                "bing3": 1,
+                "ping2": 1,
+                "man4": 1
+              },
+              "expense": {
+                "ru2": 1,
+                "he2": 1,
+                "bao4": 1,
+                "xiao1": 1,
+                "da3": 1,
+                "che1": 1,
+                "zhao3": 1,
+                "shei2": 1
+              }
+            },
+            "featuresToIntent": {
+              "dian4": [
+                "pc.restart"
+              ],
+              "nao3": [
+                "pc.restart"
+              ],
+              "ka3": [
+                "pc.restart"
+              ],
+              "qia3": [
+                "pc.restart"
+              ],
+              "lan2": [
+                "pc.restart"
+              ],
+              "bing1": [
+                "pc.restart"
+              ],
+              "bing3": [
+                "pc.restart"
+              ],
+              "ping2": [
+                "pc.restart"
+              ],
+              "man4": [
+                "pc.restart"
+              ],
+              "ru2": [
+                "expense"
+              ],
+              "he2": [
+                "expense"
+              ],
+              "bao4": [
+                "expense"
+              ],
+              "xiao1": [
+                "expense"
+              ],
+              "da3": [
+                "expense"
+              ],
+              "che1": [
+                "expense"
+              ],
+              "zhao3": [
+                "expense"
+              ],
+              "shei2": [
+                "expense"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "zh",
+                "tag": "nlu-zh",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "dian4",
+                "nao3",
+                "ka3",
+                "qia3",
+                "lan2",
+                "bing1",
+                "bing3",
+                "ping2",
+                "man4",
+                "ru2",
+                "he2",
+                "bao4",
+                "xiao1",
+                "da3",
+                "che1",
+                "zhao3",
+                "shei2"
+              ],
+              "intents": [
+                "pc.restart",
+                "expense"
+              ],
+              "perceptrons": [
+                [
+                  4.741254806518555,
+                  4.741254806518555,
+                  1.4711390733718872,
+                  1.4711390733718872,
+                  0.6942443251609802,
+                  0.6942443251609802,
+                  0.6942443251609802,
+                  0.6942443251609802,
+                  2.579195976257324,
+                  -0.37648284435272217,
+                  -0.37648284435272217,
+                  -0.6549761295318604,
+                  -0.6549761295318604,
+                  -0.22918295860290527,
+                  -0.22918295860290527,
+                  -0.22918295860290527,
+                  -0.22918295860290527,
+                  2.040963297354402
+                ],
+                [
+                  -0.6692681312561035,
+                  -0.6692681312561035,
+                  -0.23125328123569489,
+                  -0.23125328123569489,
+                  -0.15240392088890076,
+                  -0.15240392088890076,
+                  -0.15240392088890076,
+                  -0.15240392088890076,
+                  -0.23168174922466278,
+                  2.5474777221679688,
+                  2.5474777221679688,
+                  3.817340612411499,
+                  3.817340612411499,
+                  1.2657893896102905,
+                  1.2657893896102905,
+                  1.2657893896102905,
+                  1.2657893896102905,
+                  1.5742886512604983
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "zh",
+        "电脑卡"
+      ],
+      [
+        "zh",
+        "电脑蓝屏"
+      ],
+      [
+        "zh",
+        "电脑慢"
+      ],
+      [
+        "zh",
+        "如何报销？"
+      ],
+      [
+        "zh",
+        "打车报销找谁？"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "zh": {
+        "pc.restart": [
+          {
+            "answer": "如果您的电脑遇到问题，请重启"
+          }
+        ],
+        "expense": [
+          {
+            "answer": "报销请搜索vExpense"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
